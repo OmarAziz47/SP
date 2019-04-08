@@ -1,0 +1,13 @@
+main   START  0X0
+       LDX  ZERO
+LOOP   LDCH  STRING,X
+       TIX length
+       JEQ done
+       WD dv
+       J LOOP
+       RSUB
+length WORD 15
+ZERO   WORD 0
+dv     BYTE x'01'
+STRING BYTE C'this is a test'
+       END main
